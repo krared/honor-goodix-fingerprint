@@ -12,6 +12,6 @@ fi
 sudo pacman -S --needed base-devel git glib2-devel gobject-introspection meson python-cairo python-gobject fprintd
 makepkg --syncdeps --install
 sudo udevadm control --reload-rules
-sudo systemctl restart fprintd
+sudo bash ./install-resume-fix.sh
 fprintd-list "$(id -un)"
 echo 'Если устройство появилось: запусти fprintd-enroll, затем fprintd-verify.'

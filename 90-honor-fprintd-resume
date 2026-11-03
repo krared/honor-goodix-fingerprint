@@ -1,0 +1,8 @@
+#!/bin/sh
+# Goodix 27c6:6f94 can leave libfprint suspended across system sleep.
+# Queue a daemon restart after wake; keep idle D-Bus activation unchanged.
+case "${1:-}" in
+  post)
+    /usr/bin/systemctl --no-block try-restart fprintd.service
+    ;;
+esac
