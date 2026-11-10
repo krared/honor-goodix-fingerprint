@@ -14,4 +14,4 @@ makepkg --syncdeps --install
 sudo udevadm control --reload-rules
 sudo bash ./install-resume-fix.sh
 fprintd-list "$(id -un)"
-echo 'Если устройство появилось: запусти fprintd-enroll, затем fprintd-verify.'
+echo 'Проверь отпечаток через fprintd-verify. Если отпечатков еще нет, сначала запусти fprintd-enroll.'
